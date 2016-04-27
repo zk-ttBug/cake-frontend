@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="description" content="cake-frontend"/>
+    <!-- IOS特定的meta -->
+    <meta content="telephone=no" name="format-detection">
+    <title>Cake|lite</title>
+    <link rel="stylesheet" type="text/css" href="styl/base.styl">
+    <link href="lib/font-awesome/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+<!-- End Page Loading -->
+<div id="page-main" style="height: 100%; position: relative;"></div>
+</body>
+<footer>
+    <script src="lib/vue.js"></script>
+    <script src="lib/scrat.js"></script>
+    <script src="lib/zeptos.js"></script>
+    <script>
+        require.config(__FRAMEWORK_CONFIG__);
+        require.async(['boot'], function (boot) {
+            boot();
+        });
+    </script>
+</footer>
+</html>
