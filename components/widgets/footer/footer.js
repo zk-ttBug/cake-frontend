@@ -14,16 +14,20 @@ var footer = Vue.extend({
     data:function(){
         return{
             index:{
-                act:''
+                act:'',
+                url:'#!/index'
             },
             common:{
-                act:''
+                act:'',
+                url:'#!/common'
             },
             shopping:{
-                act:''
+                act:'',
+                url:'#!/shopping'
             },
             account:{
-                act:''
+                act:'',
+                url:'#!/account'
             }
         }
     },
