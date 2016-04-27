@@ -16,32 +16,8 @@ function initSys(ctx, next) {
 // 加载页面
 var currentPage;
 function loadPage(ctx, next) {
-    var rootPage;
     var page = ctx.params.page;
-    if ('/' + ctx.params.page !== ctx.path) {
-        rootPage = ctx.path.split('/' + page)[0].split('/')[1];
-    }
-    var prectx = ctx;
-    if (rootPage) {
-        require.async(pages[rootPage], function (p) {
-            if (currentPage && currentPage.destory) currentPage.destory(ctx);
-            currentPage = p;
-            var parentcom;
-            if (currentPage.init) {
-                parentcom = currentPage.init(ctx);
-            }
-            //debugger;
-            var renpage = page;
-            var resultRoute = prectx.params.router;
-            if (!resultRoute) {
-                resultRoute = prectx.params.page;
-            }
-            parentcom.$broadcast('navi-update', renpage, resultRoute);
-            runPage(prectx, next, page);
-        });
-    } else {
-        runPage(ctx, next, page)
-    }
+    runPage(ctx, next, page)
 }
 
 /**
@@ -55,7 +31,9 @@ function runPage(ctx, next, page) {
         require.async(pages[page], function (p) {
             if (currentPage && currentPage.destory) currentPage.destory(ctx);
             currentPage = p;
-            if (currentPage.init) currentPage.init(ctx);
+            if (currentPage.init){
+                currentPage.init(ctx);
+            }
         });
     } else {
         next();

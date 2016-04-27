@@ -29,10 +29,12 @@ var index = Vue.extend({
  * @return {Object} Returns index page component
  */
 var init = function () {
-    return new index({
+    var indexDom = new index({
         el: "#page-main",
         replace: false
-    })
+    });
+    indexDom.$broadcast('navi-update', 'index');
+    return indexDom;
 }
 
 module.exports = {
