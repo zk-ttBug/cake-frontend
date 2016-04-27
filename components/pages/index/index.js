@@ -1,6 +1,9 @@
 'use strict';
 
 var tpl = __inline('index.tpl');
+var header = require('widgets/header');
+var footer = require('widgets/footer');
+
 /**
  * 首页模块
  *
@@ -9,6 +12,10 @@ var tpl = __inline('index.tpl');
  */
 var index = Vue.extend({
     template: tpl,
+    components:{
+        "c-head":header(),
+        "c-foot":footer()
+    },
     ready: function () {
     }
 });

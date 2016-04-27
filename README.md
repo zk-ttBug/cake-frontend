@@ -1,4 +1,4 @@
-# lakecloud
+# cake-frontend
 
 scrat v0.5.4
 vue v1.0.14

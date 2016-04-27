@@ -1,3 +1,5 @@
 <section class="index-page">
-    <div> Hello Index!!!</div>
+    <c-head page="index"></c-head>
+    <div>  </div>
 </section>
+<c-foot page="index"></c-foot>
