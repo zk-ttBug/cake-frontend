@@ -1,6 +1,6 @@
-<footer class="footer">
+<footer id="footer-menu" class="footer">
     <ul class="footer-wrap">
-        <li>
+        <li class="active">
             <span>
                  <i class="fa fa-home" aria-hidden="true"></i>
                  <div class="footer-txt">首页</div>
